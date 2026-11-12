@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You, Mahal Ko 💙🩷</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@500;700&family=Quicksand:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= PAGE 1: PASSCODE ================= -->
+    <section id="page-passcode" class="page active gingham-bg">
+        <div class="passcode-container">
+            <h1 class="title-main">Enter Code</h1>
+
+            <div class="code-display">
+                <div class="code-box" id="box-0">🤍</div>
+                <div class="code-box" id="box-1">🤍</div>
+                <div class="code-box" id="box-2">🤍</div>
+                <div class="code-box" id="box-3">🤍</div>
+            </div>
+
+            <p class="hint-text">Hint: The day u finally say yes to me</p>
+
+            <div class="keypad">
+                <button class="key" onclick="pressKey('1')">1</button>
+                <button class="key" onclick="pressKey('2')">2</button>
+                <button class="key" onclick="pressKey('3')">3</button>
+                <button class="key" onclick="pressKey('4')">4</button>
+                <button class="key" onclick="pressKey('5')">5</button>
+                <button class="key" onclick="pressKey('6')">6</button>
+                <button class="key" onclick="pressKey('7')">7</button>
+                <button class="key" onclick="pressKey('8')">8</button>
+                <button class="key" onclick="pressKey('9')">9</button>
+                <button class="key empty" disabled></button>
+                <button class="key" onclick="pressKey('0')">0</button>
+                <button class="key del-key" onclick="deleteKey()">DEL</button>
+            </div>
+        </div>
+
+        <!-- Modal kapag MALI ang code -->
+        <div id="angry-modal" class="modal hidden">
+            <div class="modal-content">
+                <img src="https://gifdb.com/images/high/stitch-sad-lonely-drawing-9ni50b7z87q6xkit.gif"
+                    alt="Angry Stitch" class="angry-stitch-img">
+                <h2>heh! Mali! 😤</h2>
+                <p>Nakalimutan mo na ba?! Try again, mahal!</p>
+                <button class="btn-retry" onclick="closeAngryModal()">Ulit 😠</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PAGE 2: SURPRISE MENU ================= -->
+    <section id="page-menu" class="page hearts-bg">
+        <div class="center-content">
+            <h1 class="title-main">SURPRISE!</h1>
+            <p class="subtitle">click any gift</p>
+
+            <div class="gifts-grid">
+                <!-- Gift 1: Pics -->
+                <div class="gift-card" onclick="openGift('page-pics')">
+                    <img src="https://i.pinimg.com/originals/36/68/3d/36683d69537206930c7cf4ede0c0b802.jpg"
+                        alt="Stitch Camera" onerror="this.src='https://pngimg.com/d/stitch_PNG34.png'">
+                    <span class="gift-label">📸 Memories</span>
+                </div>
+
+                <!-- Gift 2: Tulips -->
+                <div class="gift-card" onclick="openGift('page-flowers')">
+                    <img src="https://usagif.com/wp-content/uploads/gify/55-stitch-mesmerised-by-the-beauty-usagif.gif"
+                        alt="Stitch Flowers" onerror="this.src='https://pngimg.com/d/stitch_PNG22.png'">
+                    <span class="gift-label">🌹 Flowers</span>
+                </div>
+
+                <!-- Gift 3: Letter -->
+                <div class="gift-card" onclick="openGift('page-letter')">
+                    <img src="https://media1.tenor.com/m/euyD97OMBj4AAAAd/stitch-lilo.gif" alt="Stitch Letter"
+                        onerror="this.src='https://pngimg.com/d/stitch_PNG52.png'">
+                    <span class="gift-label">💌 Letter</span>
+                </div>
+
+                <!-- Gift 4: Heart Stitch (Pinalitan mula sa Cake) -->
+                <div class="gift-card" onclick="openGift('page-love')">
+                    <img src="https://media1.tenor.com/m/7SfWrcp29jsAAAAC/stich.gif" alt="Stitch Heart"
+                        onerror="this.src='https://pngimg.com/d/stitch_PNG15.png'">
+                    <span class="gift-label">💖 I Love You</span>
+                </div>
+            </div>
+
+            <button class="back-btn" onclick="goBack('page-passcode')">←</button>
+        </div>
+    </section>
+
+    <!-- ================= GIFT 1: OUR PICS ================= -->
+    <section id="page-pics" class="page hearts-bg">
+        <div class="scrapbook-container">
+            <div class="scrapbook-grid">
+                <div class="scrap-note">
+                    <p>I cherish every moment with you and can't wait to create more memories together. I love you! 💙
+                    </p>
+                </div>
+                <div class="polaroid">
+                    <img src="1.jpg" alt="Us 1">
+                </div>
+                <div class="scrap-note box-note">
+                    <p>Another day, another reason to be grateful for you. ✨</p>
+                </div>
+                <div class="polaroid">
+                    <img src="2.jpg" alt="Us 2">
+                </div>
+                <div class="polaroid pink-frame">
+                    <img src="3.jpg" alt="Us 3">
+                </div>
+                <div class="polaroid">
+                    <img src="4.jpg" alt="Us 4">
+                </div>
+                <div class="scrap-note">
+                    <p>Here's to us and many more memories together. 🥰</p>
+                </div>
+                <div class="polaroid-with-note">
+                    <div class="polaroid">
+                        <img src="5.jpg" alt="Us 5">
+                    </div>
+                </div>
+            </div>
+            <button class="back-btn" onclick="goBack('page-menu')">←</button>
+        </div>
+    </section>
+
+    <!-- ================= GIFT 2: TULIPS ================= -->
+    <section id="page-flowers" class="page hearts-bg">
+        <div class="flowers-container">
+            <h1 class="title-main">flowers for you!</h1>
+            <div class="bouquet-layout">
+                <div class="badges-col">
+                    <div class="msg-pill">I MISS YOU</div>
+                    <div class="msg-pill">I MISS YOU</div>
+                    <div class="msg-pill">I MISS YOU</div>
+                    <div class="msg-pill">I MISS YOU</div>
+                </div>
+                <div class="bouquet-center">
+                    <img src="https://i.pinimg.com/originals/01/46/36/014636d2270a901fa44697d632218343.gif"
+                        alt="Pink Tulips Bouquet" class="tulips-img">
+                </div>
+                <div class="badges-col">
+                    <div class="msg-pill">I LOVE YOU</div>
+                    <div class="msg-pill">I LOVE YOU</div>
+                    <div class="msg-pill">I LOVE YOU</div>
+                    <div class="msg-pill">I LOVE YOU</div>
+                </div>
+            </div>
+            <button class="back-btn" onclick="goBack('page-menu')">←</button>
+        </div>
+    </section>
+
+    <!-- ================= GIFT 3: LETTER ================= -->
+    <section id="page-letter" class="page soft-pink-bg">
+        <div class="letter-wrapper">
+            <div class="envelope-top">
+                <h2 class="letter-header-title">A message for you,<br>Mahal ko</h2>
+                <div class="envelope-art">💌🌷</div>
+            </div>
+            <div class="letter-paper">
+                <h3>To my favorite person, 🩷</h3>
+                <p>
+                    Simula nung sinagot mo ako, sobrang daming nagbago sa buhay ko—lahat naging mas
+                    masaya at mas makulay. Thank you for always being there for me, sa patience mo, at sa pagmamahal na
+                    binibigay mo araw-araw.
+                </p>
+                <p>
+                    Kahit minsan makulit ako (parang si Stitch!), tandaan mo na ikaw lang ang palagi kong pipiliin.
+                    Mahal na mahal kita, palagi at habang buhay.
+                </p>
+                <p>
+                    Baby, Alam kong hindi madali ang LDR, pero alam ko namn kayang kaya natin toh. Laban lang tayo, haa muah
+                    huwag kang matatakot o panghinaan kahit minsan oum mahirap siya. I know kaya natin toh, basta
+                    parehas natin
+                    ipaglaban toh hehe
+                </p>
+                <p>
+                    And yes, mahirap nga kasi mag kaiba tayo ng oras, pero wala yan baby ko, focus ka lang dyan kapag may work kana 
+                    and syempre ako din focus lang ako dito mag aaral and after work tas susunod nako sayo hehe. kaya baby sshh kana unahin mo need mo unahin dyan.
+                    nandito lang ako palagi para sayo, behave lang ako dito mahal ko. hihintayin kita or ako hintayin mo dyan? haha
+                    kung sino mauuna satin dalawa blehh. wag kana mag overthink masyado ha. makakapag usap pa namn us kahit busy na tayo
+                    call ka lang, at tatawagan din kita pag di na tayo busy. tsaka tayo bumawi sa isa't isa haa. pero naniniwala ako na walang
+                    distance o time difference na makakapigil satin kung pareho natin pipiliing manatili hehe.
+                </p>
+                <p>
+                    kapag napapagod ka rest, and nandito lang ako. kapag miss na miss mo nako. tandaan mo mas miss na miss din kita.
+                    hindi man kita mayakap, makiss, mahalikan, o makita. sana nararamdaman mo sa bawat usap o call natin. maramdaman
+                    mo kung gaano kita ka mahaal ng sobra.
+                </p>
+                <p>
+                    tsaka mahal ko, wag moko isipin masyado haa, okay lang po ako muah. yung mga pag sabay ko sayo sa tulog?
+                    wala namn me ginagawa kaya ginagawa ko yun. hindi ako nahihirapan baby, happy ako sa ginagawa ko po. kaya shh na po
+                    wag ka masyado mag overthink sakin baby. lahat kaya ko basta ikaw, di ako nahihirapan sa bawat kilos at effort na ginagawa ko 
+                    po sayo. masaya ako lagi baby, wag ka mag alala hehe, kaya be goof ka lang dyan lagu baby ko, smile ka lagii haaa.
+                    hanggat di ako busy baby, sasabayan muna kita heheehe, nandito ako palagi para sayo po. kaya babyyy haaa, smile lang lagii po.
+                    yourr baby is always doingggg gooodddd hehe okay ako sa lahat muah.
+                </p>
+                <p>
+                    mahal na mahal kita aking babyyy, kapit lang, wag mo isipin masyado mga sinasabi sayo na makaapag ano satin Baby
+                    malayo tayo sa iisipin nila satin, masaya tayo lagi hehehe. ikaw lagi pipiliin ko baby kooo muah, mamahalin 
+                    kita araw araw muah, kahit hindi kita katabi. ikaw lang lagi hehe, ipag lalaban kita kahit mahirap.
+                </p>
+                <p>
+                    Mahal ko, distance is just a test, not to end our love. iloveyousomuchhh. soon hindi na sa screen lang kita makikita
+                    kundi sa tabi ko na. yung wala na limit, lagi na tayo mag kasama hehehe muah. 2 or 3 years lang yan. mabilis lang yan
+                    soon ikakasal na tayo hehe. papakasalan kita kaya dyan ka lang, hintayin moko heheheehe.
+                </p>
+                <p class="signature">Forever yours,<br>Mahaal ❤️</p>
+            </div>
+            <button class="back-btn" onclick="goBack('page-menu')">←</button>
+        </div>
+    </section>
+
+    <!-- ================= GIFT 4: BIG HEART STITCH (PINALITAN MULA SA CAKE) ================= -->
+    <section id="page-love" class="page hearts-bg">
+        <div class="center-content love-finale">
+
+            <!-- Malaking Puso na may Stitch sa loob -->
+            <div class="giant-heart-card">
+                <div class="glowing-heart-bg"></div>
+                <img src="https://www.icegif.com/wp-content/uploads/2024/06/stitch-icegif-14.gif"
+                    alt="Stitch with Heart" class="stitch-giant-img">
+                <h1 class="final-iloveyou-text">I LOVE YOU! 💙</h1>
+            </div>
+
+            <p class="subtitle" style="margin-top: 20px;">"I actually can't wait until the day that we move in together and can 
+            wake up next to each other and just be together all the time."
+            </p>
+            <button class="back-btn" onclick="goBack('page-menu')">←</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
